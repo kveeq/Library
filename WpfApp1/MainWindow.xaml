@@ -6,6 +6,15 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="158,332,0,0"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
 
         <TabControl>
@@ -20,7 +29,7 @@
                     <Button x:Name="btn_next_book" Content="Вперед" HorizontalAlignment="Left" Margin="684,323,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_next_book_Click"/>
                     <Button x:Name="btn_delete_book" Content="Удалить" HorizontalAlignment="Left" Margin="289,333,0,0" VerticalAlignment="Top" Height="33" Width="94"/>
                     <Button x:Name="btn_add_book" Content="Добавить" HorizontalAlignment="Left" Margin="32,334,0,0" VerticalAlignment="Top" Height="32" Width="96" Click="btn_add_book_Click"/>
-                    <Button x:Name="btn_reduct_book" Content="Редактировать" HorizontalAlignment="Left" Margin="158,332,0,0" VerticalAlignment="Top" Height="33" Width="94" Click="btn_reduct_book_Click"/>
+                    <Button Style="{DynamicResource ButtonStyle}" x:Name="btn_reduct_book" Content="Редактировать" HorizontalAlignment="Left" Margin="158,332,0,0" VerticalAlignment="Top" Height="33" Width="94" Click="btn_reduct_book_Click"/>
                     <Image HorizontalAlignment="Left" Height="208" Margin="557,51,0,0" VerticalAlignment="Top" Width="192" Source="github.png" Stretch="Fill"/>
                 </Grid>
             </TabItem>

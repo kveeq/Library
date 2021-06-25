@@ -9,7 +9,7 @@ namespace ClassLibrary1
     public class BasePazzle
     {
         private static string uri = "mongodb+srv://kveeq:2554781@cluster0.lfe3e.mongodb.net/Base?retryWrites=true&w=majority";
-        public static MongoClient client = new MongoClient(uri); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
+        private static MongoClient client = new MongoClient(uri); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
 
         [BsonId]
         [BsonIgnoreIfDefault]
