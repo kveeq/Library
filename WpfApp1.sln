@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{29367A4E-AEA4-411D-987B-09EF83316896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{B383C5FA-BAC5-4D58-80E8-B890AA06E225}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesCollectionsLibrary", "ClassLibrary1\GamesCollectionsLibrary.csproj", "{B383C5FA-BAC5-4D58-80E8-B890AA06E225}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

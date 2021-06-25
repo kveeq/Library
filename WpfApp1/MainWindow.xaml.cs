@@ -16,29 +16,33 @@ using ClassLibrary1;
 
 namespace WpfApp1
 {
-    // выезжают кнопки
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int x = 0;
+        private int y = 0;
+        private int z = 0;
+        private List<BaseBook> lstBooks;
+        private List<BasePazzle> lstPazzles;
+        private List<BaseGame> lstGames;
+
+
         public MainWindow()
         {
             InitializeComponent();
+            FillBookData();
+            FillPazzleData();
+            FillGameData();
         }
-        private int x;
-        private int y;
-        private int z;
-        private List<BaseBook> lstBooks = new List<BaseBook>();
-        private List<BasePazzle> lstPazzles = new List<BasePazzle>();
-        private List<BaseGame> lstGames = new List<BaseGame>();
 
-        
         // заполнение данными
         private void FillBookData()
         {
             try
             {
+                lstBooks = BaseBook.TakeList();
                 txt_name_book.Text = lstBooks[x].Name;
                 txt_autor_book.Text = lstBooks[x].Autor;
                 txt_izdatelstvo_book.Text = lstBooks[x].Izdatelstvo;
@@ -54,6 +58,7 @@ namespace WpfApp1
         {
             try
             {
+                lstPazzles = BasePazzle.TakeList();
                 txt_name_pazzle.Text = lstPazzles[y].Name;
                 txt_count_of_elem_pazzle.Text = lstPazzles[y].Count_of_elem.ToString();
                 txt_name_company_pazzle.Text = lstPazzles[y].Company_name;
@@ -68,6 +73,7 @@ namespace WpfApp1
         {
             try
             {
+                lstGames = BaseGame.TakeList();
                 txt_name_game.Text = lstGames[z].Name;
                 txt_developer_game.Text = lstGames[z].Developer;
                 txt_description_game.Text = lstGames[z].Description;
