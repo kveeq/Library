@@ -8,5 +8,47 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
 
+        <TabControl>
+            <TabItem Header="Книга" IsSelected="True" Height="24" Margin="-2,-2,-2,0" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5" RenderTransformOrigin="0.499,0.505">
+                    <TextBox x:Name="txt_name_book" HorizontalAlignment="Left" Margin="30,46,0,0" Text="Название" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txt_year_book" HorizontalAlignment="Left" Margin="30,217,0,0" Text="Год издания" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txt_izdatelstvo_book" HorizontalAlignment="Left" Margin="30,170,0,0" Text="Издательство" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txt_illustrator_book" HorizontalAlignment="Left" Margin="30,129,0,0" Text="Иллюстратор" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txt_autor_book" HorizontalAlignment="Left" Margin="30,85,0,0" Text="Автор" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btn_prev_book" Content="Назад" HorizontalAlignment="Left" Margin="617,325,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_prev_book_Click"/>
+                    <Button x:Name="btn_next_book" Content="Вперед" HorizontalAlignment="Left" Margin="684,323,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_next_book_Click"/>
+                    <Button x:Name="btn_delete_book" Content="Удалить" HorizontalAlignment="Left" Margin="289,333,0,0" VerticalAlignment="Top" Height="33" Width="94"/>
+                    <Button x:Name="btn_add_book" Content="Добавить" HorizontalAlignment="Left" Margin="32,334,0,0" VerticalAlignment="Top" Height="32" Width="96" Click="btn_add_book_Click"/>
+                    <Button x:Name="btn_reduct_book" Content="Редактировать" HorizontalAlignment="Left" Margin="158,332,0,0" VerticalAlignment="Top" Height="33" Width="94" Click="btn_reduct_book_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пазл" Height="24" Margin="-2,-2,-2,0" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="txt_name_pazzle" HorizontalAlignment="Left" Margin="26,35,0,0" Text="Название" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txt_name_company_pazzle" HorizontalAlignment="Left" Margin="27,142,0,0" Text="Компания-производитель" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txt_count_of_elem_pazzle" HorizontalAlignment="Left" Margin="27,78,0,0" Text="Количество элементов" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btn_delete_pazzle" Content="Удалить" HorizontalAlignment="Left" Margin="296,323,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+                    <Button x:Name="btn_prev_pazzle" Content="Назад" HorizontalAlignment="Left" Margin="645,343,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+                    <Button x:Name="btn_next_pazzle" Content="Вперед" HorizontalAlignment="Left" Margin="714,343,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+                    <Button x:Name="btn_reduct_pazzle" Content="Редактировать" HorizontalAlignment="Left" Margin="165,325,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btn_reduct_pazzle_Click"/>
+                    <Button x:Name="btn_add_pazzle" Content="Добавить" HorizontalAlignment="Left" Margin="36,324,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btn_add_pazzle_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Настольная игра" Height="24" Margin="-2,-2,-2,0" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="txt_name_game" HorizontalAlignment="Left" Margin="26,35,0,0" Text="Название" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txt_description_game" HorizontalAlignment="Left" Margin="27,106,0,0" Text="Кртакое описание геймплея" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txt_developer_game" HorizontalAlignment="Left" Margin="27,68,0,0" Text="Разработчик" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txt_count_of_players_game" HorizontalAlignment="Left" Margin="27,163,0,0" Text="Кол-во игроков" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btn_add_game" Content="Button" HorizontalAlignment="Left" Margin="47,323,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+                    <Button x:Name="btn_delete_game" Content="Button" HorizontalAlignment="Left" Margin="298,325,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+                    <Button x:Name="btn_reduct_game" Content="Button" HorizontalAlignment="Left" Margin="174,323,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+                    <Button x:Name="btn_prev_game" Content="Назад" HorizontalAlignment="Left" Margin="613,331,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+                    <Button x:Name="btn_next_game" Content="Вперед" HorizontalAlignment="Left" Margin="674,330,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
