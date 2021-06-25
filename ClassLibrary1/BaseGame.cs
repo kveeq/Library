@@ -6,7 +6,7 @@ using MongoDB.Driver;
 
 namespace ClassLibrary1
 {
-    class BaseGame
+    public class BaseGame
     {
 
         private static string uri = "mongodb+srv://kveeq:2554781@cluster0.lfe3e.mongodb.net/Base?retryWrites=true&w=majority";

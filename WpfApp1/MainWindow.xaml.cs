@@ -26,8 +26,79 @@ namespace WpfApp1
             InitializeComponent();
         }
         private int x;
+        private int y;
+        private int z;
         private List<BaseBook> lstBooks = new List<BaseBook>();
+        private List<BasePazzle> lstPazzles = new List<BasePazzle>();
+        private List<BaseGame> lstGames = new List<BaseGame>();
 
+        
+        // заполнение данными
+        private void FillBookData()
+        {
+            try
+            {
+                txt_name_book.Text = lstBooks[x].Name;
+                txt_autor_book.Text = lstBooks[x].Autor;
+                txt_izdatelstvo_book.Text = lstBooks[x].Izdatelstvo;
+                txt_year_book.Text = lstBooks[x].Year;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удается загрузить с базы \n {ex.Message}");
+            }
+        }  
+        
+        private void FillPazzleData()
+        {
+            try
+            {
+                txt_name_pazzle.Text = lstPazzles[y].Name;
+                txt_count_of_elem_pazzle.Text = lstPazzles[y].Count_of_elem.ToString();
+                txt_name_company_pazzle.Text = lstPazzles[y].Company_name;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удается загрузить с базы \n {ex.Message}");
+            }
+        }  
+        
+        private void FillGameData()
+        {
+            try
+            {
+                txt_name_game.Text = lstGames[z].Name;
+                txt_developer_game.Text = lstGames[z].Developer;
+                txt_description_game.Text = lstGames[z].Description;
+                txt_count_of_players_game.Text = lstGames[z].Count_of_players.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Не удается загрузить с базы \n {ex.Message}");
+            }
+        }
+
+
+        // Книги
+        private void btn_add_book_Click(object sender, RoutedEventArgs e)
+        {
+            Collection book = new Book(txt_name_book.Text, txt_autor_book.Text, txt_izdatelstvo_book.Text, txt_year_book.Text);
+            book.Add();
+        }
+
+        private void btn_reduct_book_Click(object sender, RoutedEventArgs e)
+        {
+            Collection book = new Book(txt_name_book.Text, txt_autor_book.Text, txt_izdatelstvo_book.Text, txt_year_book.Text);
+            book.Reduct(lstBooks[x]._id.ToString());
+        }
+
+        private void btn_delete_book_Click(object sender, RoutedEventArgs e)
+        {
+            Collection book = new Book(txt_name_book.Text, txt_autor_book.Text, txt_izdatelstvo_book.Text, txt_year_book.Text);
+            book.Delete(lstBooks[x]._id.ToString());
+        }
+
+        // Передвижение
         private void btn_prev_book_Click(object sender, RoutedEventArgs e)
         {
             lstBooks = BaseBook.TakeList();
@@ -58,39 +129,8 @@ namespace WpfApp1
             }
         }
 
-        private void FillBookData()
-        {
-            try
-            {
-                txt_name_book.Text = lstBooks[x].Name;
-                txt_autor_book.Text = lstBooks[x].Autor;
-                txt_izdatelstvo_book.Text = lstBooks[x].Izdatelstvo;
-                txt_year_book.Text = lstBooks[x].Year;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Не удается загрузить с базы \n {ex.Message}");
-            }
-        }
 
-        private void btn_add_book_Click(object sender, RoutedEventArgs e)
-        {
-            Collection book = new Book(txt_name_book.Text, txt_autor_book.Text, txt_izdatelstvo_book.Text, txt_year_book.Text);
-            book.Add();
-        }
-
-        private void btn_reduct_book_Click(object sender, RoutedEventArgs e)
-        {
-            Collection book = new Book(txt_name_book.Text, txt_autor_book.Text, txt_izdatelstvo_book.Text, txt_year_book.Text);
-            book.Reduct(lstBooks[x]._id.ToString());
-        }
-
-        private void btn_delete_book_Click(object sender, RoutedEventArgs e)
-        {
-            Collection book = new Book(txt_name_book.Text, txt_autor_book.Text, txt_izdatelstvo_book.Text, txt_year_book.Text);
-            book.Delete(lstBooks[x]._id.ToString());
-        }
-
+        // Пазл
         private void btn_add_pazzle_Click(object sender, RoutedEventArgs e)
         {
             Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
@@ -100,7 +140,95 @@ namespace WpfApp1
         private void btn_reduct_pazzle_Click(object sender, RoutedEventArgs e)
         {
             Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
-            pazzle.Reduct(lstPazzles[x]._id.ToString());
+            pazzle.Reduct(lstPazzles[y]._id.ToString());
+        }
+
+        private void btn_delete_pazzle_Click(object sender, RoutedEventArgs e)
+        {
+            Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
+            pazzle.Delete(lstGames[y]._id.ToString());
+        }
+
+        // Передвижение
+        private void btn_next_pazzle_Click(object sender, RoutedEventArgs e)
+        {
+            lstPazzles = BasePazzle.TakeList();
+            if (y + 1 <= lstBooks.Count - 1)
+            {
+                y++;
+                FillPazzleData();
+            }
+            else
+            {
+                y = 0;
+                FillPazzleData();
+            }
+        }
+
+        private void btn_prev_pazzle_Click(object sender, RoutedEventArgs e)
+        {
+            lstPazzles = BasePazzle.TakeList();
+            if (y - 1 >= 0)
+            {
+                y--;
+                FillPazzleData();
+            }
+            else
+            {
+                y = lstPazzles.Count - 1;
+                FillPazzleData();
+            }
+        }
+
+
+        // настольные игры
+        private void btn_add_game_Click(object sender, RoutedEventArgs e)
+        {
+            Collection game = new Game(txt_name_game.Text, txt_developer_game.Text, txt_description_game.Text, Convert.ToInt32(txt_count_of_players_game.Text));
+            game.Add();
+        }
+
+        private void btn_delete_game_Click(object sender, RoutedEventArgs e)
+        {
+            Collection game = new Game(txt_name_game.Text, txt_developer_game.Text, txt_description_game.Text, Convert.ToInt32(txt_count_of_players_game.Text));
+            game.Delete(lstGames[z]._id.ToString());
+        }
+
+        private void btn_reduct_game_Click(object sender, RoutedEventArgs e)
+        {
+            Collection game = new Game(txt_name_game.Text, txt_developer_game.Text, txt_description_game.Text, Convert.ToInt32(txt_count_of_players_game.Text));
+            game.Reduct(lstGames[z]._id.ToString());
+        }
+        
+        // Передвижение
+        private void btn_next_game_Click(object sender, RoutedEventArgs e)
+        {
+            lstGames = BaseGame.TakeList();
+            if (z + 1 <= lstGames.Count - 1)
+            {
+                z++;
+                FillGameData();
+            }
+            else
+            {
+                z = 0;
+                FillGameData();
+            }
+        }
+
+        private void btn_prev_game_Click(object sender, RoutedEventArgs e)
+        {
+            lstGames = BaseGame.TakeList();
+            if (z - 1 >= 0)
+            {
+                z--;
+                FillGameData();
+            }
+            else
+            {
+                z = lstGames.Count - 1;
+                FillGameData();
+            }
         }
     }
 }

@@ -6,13 +6,10 @@ using MongoDB.Driver;
 
 namespace ClassLibrary1
 {
-    class BasePazzle
+    public class BasePazzle
     {
         private static string uri = "mongodb+srv://kveeq:2554781@cluster0.lfe3e.mongodb.net/Base?retryWrites=true&w=majority";
         public static MongoClient client = new MongoClient(uri); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
-        private static IMongoDatabase db = client.GetDatabase("Library");
-        private static IMongoCollection<BaseBook> data = db.GetCollection<BaseBook>("pazzles");
-
 
         [BsonId]
         [BsonIgnoreIfDefault]
