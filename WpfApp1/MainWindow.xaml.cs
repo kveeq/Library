@@ -16,6 +16,7 @@ using ClassLibrary1;
 
 namespace WpfApp1
 {
+    // выезжают кнопки
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -146,14 +147,14 @@ namespace WpfApp1
         private void btn_delete_pazzle_Click(object sender, RoutedEventArgs e)
         {
             Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
-            pazzle.Delete(lstGames[y]._id.ToString());
+            pazzle.Delete(lstPazzles[y]._id.ToString()) ;
         }
 
         // Передвижение
         private void btn_next_pazzle_Click(object sender, RoutedEventArgs e)
         {
             lstPazzles = BasePazzle.TakeList();
-            if (y + 1 <= lstBooks.Count - 1)
+            if (y + 1 <= lstPazzles.Count - 1)
             {
                 y++;
                 FillPazzleData();
