@@ -21,6 +21,7 @@
                     <Button x:Name="btn_delete_book" Content="Удалить" HorizontalAlignment="Left" Margin="289,333,0,0" VerticalAlignment="Top" Height="33" Width="94"/>
                     <Button x:Name="btn_add_book" Content="Добавить" HorizontalAlignment="Left" Margin="32,334,0,0" VerticalAlignment="Top" Height="32" Width="96" Click="btn_add_book_Click"/>
                     <Button x:Name="btn_reduct_book" Content="Редактировать" HorizontalAlignment="Left" Margin="158,332,0,0" VerticalAlignment="Top" Height="33" Width="94" Click="btn_reduct_book_Click"/>
+                    <Image HorizontalAlignment="Left" Height="208" Margin="557,51,0,0" VerticalAlignment="Top" Width="192" Source="github.png" Stretch="Fill"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Пазл" Height="24" Margin="-2,-2,-2,0" VerticalAlignment="Top">
