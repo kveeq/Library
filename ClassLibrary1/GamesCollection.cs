@@ -11,7 +11,7 @@ namespace ClassLibrary1
         private static string uri = "mongodb+srv://kveeq:2554781@cluster0.lfe3e.mongodb.net/Base?retryWrites=true&w=majority";
         private static MongoClient client = new MongoClient(uri); // чтобы подключится к серверу надо передать в качестве аргумента {uri}
         protected static IMongoDatabase db = client.GetDatabase("Library");
-        public string name;
+        protected string name;
 
         public Collection(string name)
         {
