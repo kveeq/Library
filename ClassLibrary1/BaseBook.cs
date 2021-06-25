@@ -4,7 +4,7 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 
-namespace ClassLibrary1
+namespace GamesCollectionsLibrary
 {
     public class BaseBook
     {

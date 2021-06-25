@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ClassLibrary1;
+using GamesCollectionsLibrary;
 
 namespace WpfApp1
 {
@@ -140,36 +140,42 @@ namespace WpfApp1
         // Пазл
         private void btn_add_pazzle_Click(object sender, RoutedEventArgs e)
         {
-            tryFormatPazzle();
-            Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
-            pazzle.Add();
-        }
-
-        private void btn_reduct_pazzle_Click(object sender, RoutedEventArgs e)
-        {
-            tryFormatPazzle();
-            Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
-            pazzle.Reduct(lstPazzles[y]._id.ToString());
-        }
-
-        private void btn_delete_pazzle_Click(object sender, RoutedEventArgs e)
-        {
-            tryFormatPazzle();
-            Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
-            pazzle.Delete(lstPazzles[y]._id.ToString()) ;
-        }
-
-        private void tryFormatPazzle()
-        {
             try
             {
-                Convert.ToInt32(txt_count_of_elem_pazzle.Text);
+                Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
+                pazzle.Add();
             }
             catch
             {
                 MessageBox.Show("Неправильный формат количество элементов");
             }
         }
+
+        private void btn_reduct_pazzle_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
+                pazzle.Reduct(lstPazzles[y]._id.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Неправильный формат количество элементов");
+            }
+}
+
+        private void btn_delete_pazzle_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Collection pazzle = new Pazzle(txt_name_pazzle.Text, Convert.ToInt32(txt_count_of_elem_pazzle.Text), txt_name_company_pazzle.Text);
+                pazzle.Delete(lstPazzles[y]._id.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Неправильный формат количество элементов");
+            }
+}
 
         // Передвижение
         private void btn_next_pazzle_Click(object sender, RoutedEventArgs e)
@@ -206,23 +212,41 @@ namespace WpfApp1
         // настольные игры
         private void btn_add_game_Click(object sender, RoutedEventArgs e)
         {
-            tryFormatGame();
-            Collection game = new Game(txt_name_game.Text, txt_developer_game.Text, txt_description_game.Text, Convert.ToInt32(txt_count_of_players_game.Text));
-            game.Add();
+            try
+            {
+                Collection game = new Game(txt_name_game.Text, txt_developer_game.Text, txt_description_game.Text, Convert.ToInt32(txt_count_of_players_game.Text));
+                game.Add();
+            }
+            catch
+            {
+                MessageBox.Show("Неправильный формат количествa игроков");
+            }
         }
 
         private void btn_delete_game_Click(object sender, RoutedEventArgs e)
         {
-            tryFormatGame();
-            Collection game = new Game(txt_name_game.Text, txt_developer_game.Text, txt_description_game.Text, Convert.ToInt32(txt_count_of_players_game.Text));
-            game.Delete(lstGames[z]._id.ToString());
+            try
+            {
+                Collection game = new Game(txt_name_game.Text, txt_developer_game.Text, txt_description_game.Text, Convert.ToInt32(txt_count_of_players_game.Text));
+                game.Delete(lstGames[z]._id.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Неправильный формат количествa игроков");
+            }
         }
 
         private void btn_reduct_game_Click(object sender, RoutedEventArgs e)
         {
-            tryFormatGame();
-            Collection game = new Game(txt_name_game.Text, txt_developer_game.Text, txt_description_game.Text, Convert.ToInt32(txt_count_of_players_game.Text));
-            game.Reduct(lstGames[z]._id.ToString());
+            try
+            {
+                Collection game = new Game(txt_name_game.Text, txt_developer_game.Text, txt_description_game.Text, Convert.ToInt32(txt_count_of_players_game.Text));
+                game.Reduct(lstGames[z]._id.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Неправильный формат количествa игроков");
+            }
         }
         
         // Передвижение
@@ -253,18 +277,6 @@ namespace WpfApp1
             {
                 z = lstGames.Count - 1;
                 FillGameData();
-            }
-        }
-
-        private void tryFormatGame()
-        {
-            try
-            {
-                Convert.ToInt32(txt_count_of_players_game.Text);
-            }
-            catch
-            {
-                MessageBox.Show("Неправильный формат количествa игроков");
             }
         }
     }
