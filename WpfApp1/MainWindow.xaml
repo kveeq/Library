@@ -11,7 +11,28 @@
         <Style x:Key="ButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
             <Setter Property="VerticalContentAlignment" Value="Top"/>
-            <Setter Property="Margin" Value="158,332,0,0"/>
+            <Setter Property="Margin" Value="0,300,350,0"/>
+            <Setter Property="Content" Value="Редактировать"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="0,300,600,0"/>
+            <Setter Property="Content" Value="Добавить"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="100"/>
+        </Style>
+
+        <Style x:Key="ButtonStyle2" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Margin" Value="0,300,100,0"/>
+            <Setter Property="Content" Value="Удалить"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="100"/>
         </Style>
     </Window.Resources>
 
@@ -27,9 +48,9 @@
                     <TextBox x:Name="txt_autor_book" HorizontalAlignment="Left" Margin="30,85,0,0" Text="Автор" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
                     <Button x:Name="btn_prev_book" Content="Назад" HorizontalAlignment="Left" Margin="617,325,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_prev_book_Click"/>
                     <Button x:Name="btn_next_book" Content="Вперед" HorizontalAlignment="Left" Margin="684,323,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_next_book_Click"/>
-                    <Button x:Name="btn_delete_book" Content="Удалить" HorizontalAlignment="Left" Margin="289,333,0,0" VerticalAlignment="Top" Height="33" Width="94"/>
-                    <Button x:Name="btn_add_book" Content="Добавить" HorizontalAlignment="Left" Margin="32,334,0,0" VerticalAlignment="Top" Height="32" Width="96" Click="btn_add_book_Click"/>
-                    <Button Style="{DynamicResource ButtonStyle}" x:Name="btn_reduct_book" Content="Редактировать" HorizontalAlignment="Left" Margin="158,332,0,0" VerticalAlignment="Top" Height="33" Width="94" Click="btn_reduct_book_Click"/>
+                    <Button Style="{DynamicResource ButtonStyle2}" x:Name="btn_delete_book" Click="btn_delete_book_Click"/>
+                    <Button Style="{DynamicResource ButtonStyle1}" x:Name="btn_add_book" Click="btn_add_book_Click"/>
+                    <Button Style="{DynamicResource ButtonStyle}" x:Name="btn_reduct_book" Click="btn_reduct_book_Click"/>
                     <Image HorizontalAlignment="Left" Height="208" Margin="557,51,0,0" VerticalAlignment="Top" Width="192" Source="github.png" Stretch="Fill"/>
                 </Grid>
             </TabItem>
@@ -40,9 +61,9 @@
                     <TextBox x:Name="txt_count_of_elem_pazzle" HorizontalAlignment="Left" Margin="27,78,0,0" Text="Количество элементов" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <Button x:Name="btn_delete_pazzle" Content="Удалить" HorizontalAlignment="Left" Margin="296,323,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btn_delete_pazzle_Click"/>
                     <Button x:Name="btn_prev_pazzle" Content="Назад" HorizontalAlignment="Left" Margin="631,306,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_prev_pazzle_Click"/>
-                    <Button x:Name="btn_next_pazzle" Content="Вперед" HorizontalAlignment="Left" Margin="700,306,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_next_pazzle_Click"/>
-                    <Button x:Name="btn_reduct_pazzle" Content="Редактировать" HorizontalAlignment="Left" Margin="165,325,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btn_reduct_pazzle_Click"/>
-                    <Button x:Name="btn_add_pazzle" Content="Добавить" HorizontalAlignment="Left" Margin="36,324,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btn_add_pazzle_Click"/>
+                    <Button Style="{DynamicResource ButtonStyle2}" x:Name="btn_next_pazzle" Content="Вперед" HorizontalAlignment="Left" Margin="700,306,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_next_pazzle_Click"/>
+                    <Button Style="{DynamicResource ButtonStyle}" x:Name="btn_reduct_pazzle" Click="btn_reduct_pazzle_Click"/>
+                    <Button Style="{DynamicResource ButtonStyle1}" x:Name="btn_add_pazzle" Click="btn_add_pazzle_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Настольная игра" Height="24" Margin="-2,-2,-2,0" VerticalAlignment="Top">
@@ -51,9 +72,9 @@
                     <TextBox x:Name="txt_description_game" HorizontalAlignment="Left" Margin="27,106,0,0" Text="Кртакое описание геймплея" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <TextBox x:Name="txt_developer_game" HorizontalAlignment="Left" Margin="27,68,0,0" Text="Разработчик" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
                     <TextBox x:Name="txt_count_of_players_game" HorizontalAlignment="Left" Margin="27,163,0,0" Text="Кол-во игроков" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="btn_add_game" Content="Добавить" HorizontalAlignment="Left" Margin="47,323,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btn_add_game_Click"/>
+                    <Button Style="{DynamicResource ButtonStyle1}" x:Name="btn_add_game" Click="btn_add_game_Click"/>
                     <Button x:Name="btn_delete_game" Content="Удалить" HorizontalAlignment="Left" Margin="298,325,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btn_delete_game_Click"/>
-                    <Button x:Name="btn_reduct_game" Content="Редактировать" HorizontalAlignment="Left" Margin="174,323,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btn_reduct_game_Click"/>
+                    <Button Style="{DynamicResource ButtonStyle}" x:Name="btn_reduct_game" Click="btn_reduct_game_Click"/>
                     <Button x:Name="btn_prev_game" Content="Назад" HorizontalAlignment="Left" Margin="612,308,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_prev_game_Click"/>
                     <Button x:Name="btn_next_game" Content="Вперед" HorizontalAlignment="Left" Margin="673,307,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="btn_next_game_Click"/>
                 </Grid>
